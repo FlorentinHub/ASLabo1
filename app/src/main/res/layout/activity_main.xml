@@ -7,12 +7,83 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:id="@+id/tv_title"
+        android:layout_width="384dp"
+        android:layout_height="102dp"
+        android:text="Login System"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/design_default_color_secondary_variant"
+        android:textSize="54sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.047" />
+
+    <EditText
+        android:id="@+id/et_courriel"
+        android:layout_width="360dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="Votre courriel"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+    <EditText
+        android:id="@+id/et_mot_de_passe"
+        android:layout_width="359dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="252dp"
+        android:ems="10"
+        android:hint="Votre mot de passe"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/cb_afficher_mot_de_passe"
+        android:layout_width="290dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="44dp"
+        android:text="Afficher le mot de passe"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_mot_de_passe" />
+
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Courriel ou mot de passe non valide"
+        android:textColor="#FF0000"
+        app:layout_constraintBottom_toTopOf="@+id/btn_valider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cb_afficher_mot_de_passe"
+        app:layout_constraintVertical_bias="0.689" />
+
+    <Button
+        android:id="@+id/btn_valider"
+        android:layout_width="124dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="48dp"
+        android:background="@color/design_default_color_secondary"
+        android:text="Valider"
+        android:textColor="#FAF8F8"
+        android:textColorLink="@color/design_default_color_secondary_variant"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cb_afficher_mot_de_passe" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
