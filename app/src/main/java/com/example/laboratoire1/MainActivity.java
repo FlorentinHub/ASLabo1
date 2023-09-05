@@ -34,11 +34,14 @@ public class MainActivity extends AppCompatActivity {
         // Gestionnaire d'événements pour la case à cocher
         cbAfficherMotDePasse.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
-                // Affiche le mot de passe sous forme de texte lisible
-                etMotDePasse.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                // Met en rouge le mot de passe sous forme de texte lisible
+                tvMessage.setTextColor(getResources().getColor(R.color.blue_color));
+//                etMotDePasse.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
             } else {
-                // Masque le mot de passe en utilisant le type de texte de mot de passe
-                etMotDePasse.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                // Met en rouge le mot de passe en utilisant le type de texte de mot de passe
+                tvMessage.setTextColor(getResources().getColor(R.color.red_color));
+                tvMessage.setVisibility(View.VISIBLE);
+//                etMotDePasse.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
             }
         });
 
@@ -47,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             String password = etMotDePasse.getText().toString();
             if (isPasswordValid(password)) {
                 // Si le mot de passe est valide, cache le message
-                tvMessage.setVisibility(View.INVISIBLE);
+                tvMessage.setTextColor(@Color);
             } else {
                 // Si le mot de passe n'est pas valide, affiche le message.
                 tvMessage.setVisibility(View.VISIBLE);
