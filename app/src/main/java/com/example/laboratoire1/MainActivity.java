@@ -1,5 +1,6 @@
 package com.example.laboratoire1;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
@@ -30,18 +31,16 @@ public class MainActivity extends AppCompatActivity {
         cbAfficherMotDePasse = findViewById(R.id.cb_afficher_mot_de_passe);
         tvMessage = findViewById(R.id.tv_message);
         btnValider = findViewById(R.id.btn_valider);
+        tvMessage.setTextColor(getResources().getColor(R.color.color_gray));
 
         // Gestionnaire d'événements pour la case à cocher
         cbAfficherMotDePasse.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
-                // Met en rouge le mot de passe sous forme de texte lisible
-                tvMessage.setTextColor(getResources().getColor(R.color.blue_color));
-//                etMotDePasse.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                // Affiche le mot de passe sous forme de texte lisible
+                etMotDePasse.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
             } else {
-                // Met en rouge le mot de passe en utilisant le type de texte de mot de passe
-                tvMessage.setTextColor(getResources().getColor(R.color.red_color));
-                tvMessage.setVisibility(View.VISIBLE);
-//                etMotDePasse.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+                // Masque le mot de passe en utilisant le type de texte de mot de passe
+                etMotDePasse.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
             }
         });
 
@@ -49,11 +48,14 @@ public class MainActivity extends AppCompatActivity {
         btnValider.setOnClickListener(v -> {
             String password = etMotDePasse.getText().toString();
             if (isPasswordValid(password)) {
-                // Si le mot de passe est valide, cache le message
-                tvMessage.setTextColor(@Color);
+                // Si le mot de passe est valide, on le met bleu
+                Resources r = getResources();
+                int bleu=r.getColor(R.color.blue_color);
+                tvMessage.setTextColor(bleu);
             } else {
-                // Si le mot de passe n'est pas valide, affiche le message.
+                // Si le mot de passe n'est pas valide, on le met en rouge
                 tvMessage.setVisibility(View.VISIBLE);
+                tvMessage.setTextColor(getResources().getColor(R.color.red_color));
             }
         });
     }

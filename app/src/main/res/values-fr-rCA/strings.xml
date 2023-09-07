@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Laboratoire#1-ToupetFl</string>
     <string name="votre_courriel">Votre courriel</string>
+    <string name="mdp">Votre mot de passe</string>
+    <string name="amdp">Afficher votre mot de passe</string>
+    <string name="CourrielOuPwd">Votre courriel ou votre mot de passe est invalide</string>
+    <string name="Valider">Valider</string>
+    <string name="LoginSystem">Identification</string>
 </resources>
