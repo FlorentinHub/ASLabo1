@@ -3,7 +3,7 @@
     <string name="votre_courriel">Your email</string>
     <string name="mdp">Your password</string>
     <string name="amdp">Show your password</string>
-    <string name="CourrielOuPwd">Show your password</string>
+    <string name="CourrielOuPwd">Your email or password is wrong</string>
     <string name="Valider">Validate</string>
     <string name="LoginSystem">LOGIN SYSTEM</string>
 </resources>

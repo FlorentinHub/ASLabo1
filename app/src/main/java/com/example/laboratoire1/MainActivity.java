@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         cbAfficherMotDePasse = findViewById(R.id.cb_afficher_mot_de_passe);
         tvMessage = findViewById(R.id.tv_message);
         btnValider = findViewById(R.id.btn_valider);
-        tvMessage.setTextColor(getResources().getColor(R.color.color_gray));
+        tvMessage.setVisibility(View.INVISIBLE);
 
         // Gestionnaire d'événements pour la case à cocher
         cbAfficherMotDePasse.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -47,15 +47,21 @@ public class MainActivity extends AppCompatActivity {
         // Gestionnaire d'événements pour le bouton de validation
         btnValider.setOnClickListener(v -> {
             String password = etMotDePasse.getText().toString();
+            tvMessage.setVisibility(View.VISIBLE);
             if (isPasswordValid(password)) {
                 // Si le mot de passe est valide, on le met bleu
                 Resources r = getResources();
-                int bleu=r.getColor(R.color.blue_color);
+                int bleu = r.getColor(R.color.blue_color);
+                btnValider.setBackgroundColor(bleu);
                 tvMessage.setTextColor(bleu);
             } else {
+                Resources r = getResources();
+                int rouge = r.getColor(R.color.red_color);
+                tvMessage.setTextColor(rouge);
+                btnValider.setBackgroundColor(rouge);
                 // Si le mot de passe n'est pas valide, on le met en rouge
-                tvMessage.setTextColor(getResources().getColor(R.color.red_color));
             }
+
         });
     }
 
