@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
                 tvMessage.setTextColor(bleu);
             } else {
                 // Si le mot de passe n'est pas valide, on le met en rouge
-                tvMessage.setVisibility(View.VISIBLE);
                 tvMessage.setTextColor(getResources().getColor(R.color.red_color));
             }
         });

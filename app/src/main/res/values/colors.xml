@@ -2,5 +2,5 @@
 <resources>
     <color name="blue_color">#00bfff</color> <!-- Couleur bleue -->
     <color name="red_color">#fa0202</color>   <!-- Couleur rouge -->
-    <color name="color_gray">#7d827f</color>   <!-- Couleur rouge -->
+    <color name="color_gray">#7d827f</color>   <!-- Couleur gris -->
 </resources>
